@@ -1,5 +1,25 @@
 __author__ = 'student'
 import numpy as np
-y=np.log(1+x*x,())
+import matplotlib.pyplot as plt
+import math
+import pylab
+from matplotlib import mlab
 
-ggg
+tmin = -20.0
+tmax = 20.0
+
+dt = 0.01
+tlist = mlab.frange (tmin, tmax, dt)
+
+pylab.ion()
+
+for n in range (50):
+    xlist = [math.sin (t + n / 2.0) for t in tlist]
+    ylist = [math.cos (2*t)for t in tlist]
+    pylab.clf()
+    pylab.plot (xlist, ylist)
+    pylab.draw()
+    pylab.pause(0.005)
+
+
+pylab.close()
