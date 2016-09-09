@@ -1,9 +1,13 @@
 __author__ = 'student'
 import numpy as np
 import matplotlib.pyplot as plt
-x=np.arange(-10, 10.01, 0.01)
-y=str(input())
-plt.xkcd()
-plt.grid()
-plt.plot (x,eval(y))
+x=np.arange(-1, 1.01, 0.001)
+
+def veershtrass(x):
+    y = 0
+    for n in range (50):
+        y += 0.5**n*np.cos(5**n*np.pi*x)
+    return y
+
+plt.plot(x,veershtrass(x))
 plt.show()
